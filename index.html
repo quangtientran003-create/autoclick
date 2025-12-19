@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tải Tự Động Bấm v2 - Official</title>
+    <title>Hệ Thống Tải Tự Động Bấm v2</title>
     <style>
-        body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: 300px; }
-        .logo { width: 80px; height: 80px; background: linear-gradient(135deg, #6c5ce7, #00cec9); margin: 0 auto 20px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 40px; box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4); }
-        h1 { font-size: 22px; color: #333; margin: 0; }
-        .btn-download { background: #6c5ce7; color: white; padding: 15px 30px; text-decoration: none; border-radius: 12px; font-weight: bold; display: block; margin-top: 25px; transition: 0.3s; }
-        .btn-download:hover { transform: scale(1.05); background: #5b4bc4; }
-        .btn-files { background: #eee; color: #666; padding: 10px; text-decoration: none; border-radius: 10px; display: block; margin-top: 15px; font-size: 13px; }
+        :root { --p: #6c5ce7; --s: #00cec9; }
+        body { font-family: sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; width: 320px; border: 1px solid #333; }
+        .logo { width: 80px; height: 80px; background: linear-gradient(135deg, var(--p), var(--s)); margin: 0 auto 20px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; box-shadow: 0 0 20px rgba(108, 92, 231, 0.4); }
+        .btn-dl { background: var(--p); color: white; padding: 15px; text-decoration: none; border-radius: 12px; display: block; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .btn-dl:hover { background: var(--s); color: #000; transform: scale(1.02); }
+        .footer-info { margin-top: 20px; font-size: 12px; color: #666; }
     </style>
 </head>
 <body>
+    <div class="card">
+        <div class="logo">⚡</div>
+        <h2 style="margin:0">Tự động bấm v2</h2>
+        <p style="color:#888; font-size:14px">Nhẹ • Mượt • Không tốn pin</p>
 
-<div class="card">
-    <div class="logo">⚡</div>
-    <h1>Tự động bấm v2</h1>
-    <p style="color: #888; font-size: 14px;">Phiên bản cải tiến siêu nhẹ</p>
+        <a href="./TuDongBamV2.apk" class="btn-dl" download>
+            📥 TẢI XUỐNG APK
+        </a>
 
-    <a href="./TuDongBamV2.apk" class="btn-download" download="TuDongBamV2.apk">
-        📥 TẢI APK NGAY
-    </a>
-
-    <a href="intent://view/#Intent;action=android.intent.action.VIEW;type=resource/folder;end" class="btn-files">
-        📂 MỞ QUẢN LÝ TỆP
-    </a>
-</div>
-
+        <div class="footer-info">
+            Dung lượng: ~2.8MB | Phiên bản: v2.0
+        </div>
+    </div>
 </body>
 </html>
+
