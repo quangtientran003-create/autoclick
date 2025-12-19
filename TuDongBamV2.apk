@@ -1,0 +1,40 @@
+package com.my.autoclickv2
+
+import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.GestureDescription
+import android.graphics.Path
+import android.os.Handler
+import android.os.Looper
+import android.view.accessibility.AccessibilityEvent
+
+class AutoClickService : AccessibilityService() {
+    private val handler = Handler(Looper.getMainLooper())
+    private var isRunning = false
+    
+    // Tọa độ bấm mặc định (có thể cải tiến thêm nút chọn tọa độ sau)
+    private val clickPoints = listOf(Pair(500f, 1000f)) 
+
+    fun startAutoClick(delay: Long) {
+        isRunning = true
+        handler.post(object : Runnable {
+            override fun run() {
+                if (!isRunning) return
+                for (point in clickPoints) {
+                    executeClick(point.first, point.second)
+                }
+                handler.postDelayed(this, delay)
+            }
+        })
+    }
+
+    private fun executeClick(x: Float, y: Float) {
+        val path = Path().apply { moveTo(x, y) }
+        val gesture = GestureDescription.Builder()
+            .addStroke(GestureDescription.StrokeDescription(path, 0, 50))
+            .build()
+        dispatchGesture(gesture, null, null)
+    }
+
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
+    override fun onInterrupt() { isRunning = false }
+}
